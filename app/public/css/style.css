@@ -1,0 +1,203 @@
+/* Déclaration des variables CSS pour les couleurs */
+:root {
+  --bgcolor_body: #c5aa94;
+  --bgcolor_header_footer: #4c3629;
+  --font_color_nav: #daccbf;
+  --text_produit: #f2c896;
+  --liens: #537b03;
+  --color_article_catalogue: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Philosopher", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  min-height: 100vh;
+}
+
+/* <-------------------header-----------------------> */
+
+/* Styles pour header */
+.header {
+  width: 100vw;
+  height: 10vh;
+  position: relative;
+  padding: 0 1rem;
+  background: var(--bgcolor_header_footer);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Styles pour la section du logo et du titre O'COFFE dans header */
+.header__logo_title {
+  width: 20vw;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+}
+
+/* titre O'coffe */
+.header__logo_title h1 {
+  color: var(--font_color_nav);
+  padding-left: 1rem;
+}
+
+/* Styles pour l'image du logo dans header */
+.header__logo_title__image {
+  width: 3.5rem;
+}
+
+/* <-------------------navbar-----------------------> */
+
+/* Styles pour la barre de navigation */
+.nav_menu ul {
+  width: 30vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Styles pour les liens de navigation */
+.nav_menu a {
+  text-decoration: none;
+  color: var(--font_color_nav);
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-right: 1px solid var(--font_color_nav);
+  border-left: 1px solid var(--font_color_nav);
+  margin: 0 2rem;
+}
+
+/* Styles pour le bouton du menu burger */
+#menu-button {
+  background: transparent;
+  color: var(--font_color_nav);
+  border: none;
+  cursor: pointer;
+  display: none; /* Masqué par défaut sur grand écran */
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+ 
+}
+
+/* Styles pour le menu lorsque l'écran est réduit */
+#menu_navbar {
+  display: block; /* Afficher le menu par défaut sur grand écran */
+}
+
+#menu_navbar li {
+  list-style: none;
+}
+
+/* Styles pour le bouton de fermeture */
+#close-menu {
+  background: transparent;
+  border: none;
+  color: var(--font_color_nav);
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: none; /* Masqué par défaut sur grand écran */
+}
+
+/* <-------------------footer-----------------------> */
+/* Styles pour footer */
+.footer {
+  width: 100vw;
+  height: 7vh;
+  padding: 0 1rem;
+  background: var(--bgcolor_header_footer);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--font_color_nav);
+}
+/* Styles pour l'image dans le footer */
+.footer img {
+  width: 3rem;
+  margin-right: 1rem;
+}
+
+/* Styles pour le texte dans le footer */
+.footer p {
+  padding: 0.2rem 0;
+  line-height: 1.5;
+}
+
+/* <-------------------RESPONSIVE-----------------------> */
+
+@media screen and (max-width: 768px) {
+  /* Retire le logo et le nom de la boutique du footer sur petit écran */
+  .footer_title {
+    display: none;
+  }
+
+  /* Style pour le menu burger */
+  #menu-button {
+    display: flex; /* Affiche menuburger sur petit écran */
+  }
+
+  /* Styles pour le menu de navigation sur petits écrans */
+  .nav_menu {
+    display: none; /* Masquer le menu par défaut sur petit écran */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 80vh;
+    background: var(--bgcolor_header_footer);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 999; /*  menu est au-dessus des autres éléments */
+  }
+
+  .nav_menu ul {
+    flex-direction: column;
+  }
+
+  .nav_menu.active {
+    display: flex; /* Affiche le menu burger qui était masqué par défaut. */
+    transform: translateX(0);
+    /* Réinitialise la transformation de décalage pour afficher le menu 
+    à sa position normale */
+  }
+  /* Styles pour les éléments de lien à l'intérieur du menu de navigation lorsqu'il est affiché sur les petits écrans */
+  .nav_menu a {
+    margin: 10px 0;
+    font-size: 1.5rem;
+    color: var(--font_color_nav);
+  }
+
+  /* Styles pour les points des éléments de liste */
+  .nav_menu li {
+    list-style: none;
+    padding: 2rem;
+  }
+
+  /* Styles pour le bouton de fermeture */
+  #close-menu {
+    display: block; /* Affiche le bouton CLOSE sur petit écran */
+  }
+
+  /* centre l'adresse dans le footer */
+  .footer {
+    justify-content: center;
+  }
+}

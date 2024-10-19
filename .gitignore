@@ -1,0 +1,5 @@
+.env
+.env.test
+.env.dev
+.env.docker-compose
+node_modules/

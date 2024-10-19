@@ -1,0 +1,49 @@
+<%- include('partials/header', { title: 'Produit' , pageName: 'produit' }) %>
+
+
+  <div class="product">
+    <img src="../images/1.webp" alt="image d'illustration" class="illustration">
+
+
+
+    <article class="oneProduct">
+      <!--- Si `product.available` est `true`, la classe `disponible` est appliquée.-->
+      <!--- Si `product.available` est `false`, la classe `non-disponible` est appliquée.-->
+      <p id="product_disponibility" class="<%= product.available ? 'disponible' : 'non-disponible' %>">
+        <%= product.available ? 'Disponible' : 'Non disponible' %>
+      </p>
+      <!-- Condition ? = VRAI    : = FAUX
+      - Si `product.available` = true , alors 'Disponible' sera affiché.
+      - Si `product.available`= FALSE , alors 'Non disponible' sera affiché.-->
+
+
+    <h1 id="productName" aria-label="Nom du produit : <%= product.name %>"><%= product.name %>
+    </h1>
+      <p id="product_reference">Référence : <%= product.reference %></p>
+
+      <div class="product_image_container">
+        <img src="../images/coffees/<%= product.reference %>.webp" alt="Image du produit" id="article_image">
+      </div>
+
+      <p id="product_description" aria-label="Description du produit : <%= product.description %>">><%= product.description %></p>
+
+      <div class="product_caracteritique">
+        <p id="product_origine">Origine: <%= product.origine %>
+        </p>
+        <p id="product_category">
+          <%= product.category %>
+        </p>
+      </div>
+
+      <div class="product_price_panier">
+        <p id="product_price">Prix au kg: <%= product.price %>€</p>
+        <a href="../catalogue" id="product_return">Retour au catalogue</a>
+      </div>
+
+
+    </article>
+
+  </div>
+
+
+  <%- include('partials/footer') %>

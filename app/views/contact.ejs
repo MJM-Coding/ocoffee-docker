@@ -1,0 +1,64 @@
+<%- include('partials/header', { title: 'Contact' , pageName: 'contact' }) %>
+
+    <!-- script d'envoi du mail -->
+    <script src="../js/contact.js" defer></script>
+    <script src="../js/menuBurger.js" defer></script>
+    </head>
+
+    <body>
+
+
+        <div class="container">
+            <section class="form_info">
+                <h2>Horaires d'ouverture</h2>
+                <p>Du mardi au samedi : 09h à 12h et 14h à 19h</p>
+                <p> Fermé le lundi</p>
+
+
+                <h2>Notre adresse</h2>
+                <p> 123 Rue des Fauvettes</p>
+                <p>75001 Hauts-de-Cloques</p>
+                
+                <!-- Google Maps  -->
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1213.9635223366784!2d5.079366879940387!3d43.6417574724912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9ffca9d5b15ef%3A0x9059bcd27d47b9a8!2s123%20Rue%20des%20Fauvettes%2C%2013300%20Salon-de-Provence!5e0!3m2!1sfr!2sfr!4v1722543110152!5m2!1sfr!2sfr"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </section>
+
+
+
+            <section class="form_container">
+                <h3>Contactez nous</h3>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nom</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Objet</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit">Envoyer</button>
+                </form>
+            </section>
+
+        </div>
+
+
+    </body>
+
+    </html>

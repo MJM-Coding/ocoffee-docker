@@ -1,0 +1,172 @@
+/* background pour la page produit */
+body {
+  background-color: #000000;
+}
+.product {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  margin: 3rem 0;
+}
+
+.illustration {
+  width: auto;
+  opacity: 1;
+  max-height: 100vh;
+  overflow: hidden;
+  margin: 10rem 1rem;
+  border-radius: 15px;
+}
+
+/* style pour un article  */
+.oneProduct {
+  color: var(--text_produit);
+  text-align: center;
+  padding: 0 1rem;
+  width: 25vw;
+  max-height: auto;
+  background-color: var(--bgcolor_header_footer);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--font_color_nav);
+}
+
+/* Style pour le bloc DISPONIBLE/NON DISPONIBLE*/
+#product_disponibility {
+  align-self: flex-end;
+  margin-top: 1rem;
+  padding: 0 0.5rem;
+}
+/* style pour DISPONIBLE */
+.disponible {
+  color: white;
+  background-color: rgb(16, 87, 10);
+}
+
+/* style pour NON DISPONIBLE */
+.non-disponible {
+  color: white;
+  background-color: rgb(112, 19, 19);
+}
+
+/* titre de l'article */
+.oneProduct h1 {
+  font-size: 3rem;
+  color: var(--font_color_nav);
+}
+
+/* conteneur de l'image pour maintenir le ratio d'aspect */
+.product_image_container {
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%; /* Pour un ratio d'aspect de 4:3 */
+  position: relative;
+  margin: 0.5rem 0;
+}
+
+/* image de l'article */
+#article_image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* classe qui regroupe l'origine du café et sa catégorie */
+.product_caracteritique {
+  color: var(--font_color_nav);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1rem 0;
+  font-size: 1.5rem;
+}
+
+#product_origine {
+  border-top: 1px solid var(--font_color_nav);
+  border-bottom: 1px solid var(--font_color_nav);
+  padding: 0.5rem 0;
+}
+
+#product_category {
+  border-top: 1px solid var(--font_color_nav);
+  border-bottom: 1px solid var(--font_color_nav);
+  padding: 0.5rem 0;
+}
+
+/* classe qui regroupe le prix et le lien pour ajouter au panier */
+.product_price_panier {
+  color: var(--font_color_nav);
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* description du produit <p> */
+#product_description {
+  padding: 1rem 0;
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
+/* prix du produit */
+#product_price {
+  font-size: 1.2rem;
+  border-radius: 5px;
+  padding: 0 0.5rem;
+}
+
+/* bouton ajouter au panier */
+#product_return {
+  margin-top: 1.2rem;
+  text-decoration: none;
+  text-align: center;
+  background-color: var(--liens);
+  color: var(--font_color_nav);
+  border-radius: 10px;
+  padding: 0.5rem 2rem;
+  margin: 1rem 0;
+  font-weight: bold;
+}
+/* <------------RESPONSIVE 1024px -----------> */
+
+@media screen and (max-width: 1024px) {
+  .oneProduct {
+    margin: 3rem;
+    width: 30%;
+    height: auto;
+  }
+}
+/* <------------RESPONSIVE 768px-----------> */
+
+@media screen and (max-width: 768px) {
+  .product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+  }
+  /* recentre le produit sur petit ecran */
+  .oneProduct {
+    margin: 3rem;
+    width: 70vw;
+    height: auto;
+  }
+  /* ameliore la photo d'illustration sur petit ecran */
+  .illustration {
+    margin: 0;
+    border-radius: 15px;
+  }
+}

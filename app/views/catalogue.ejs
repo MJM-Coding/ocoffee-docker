@@ -1,0 +1,56 @@
+<%- include('partials/header', { title: 'Catalogue' , pageName: 'catalogue' }) %>
+
+
+  <div class="presentation_catalogue">
+    <h1> CATALOGUE</h1>
+  </div>
+
+  <div class="form_catalogue">
+    <!-- Formulaire pour sélectionner une catégorie -->
+    <form action="/catalogue" method="GET">
+      <!-- Menu déroulant avec soumission automatique -->
+      <select name="category" onchange="this.form.submit()">
+        <!-- Option de placeholder non sélectionnable -->
+        <option value="" disabled <% if (!selectedCategory) { %> selected <% } %>>Choisir une catégorie</option>
+        <!-- Options pour chaque catégorie -->
+        <% categories.forEach(category=> { %>
+          <option value="<%= category %>" <% if (selectedCategory===category) { %> selected <% } %>><%= category %>
+          </option>
+          <% }); %>
+      </select>
+    </form>
+  </div>
+
+
+  <div class="catalogue_product">
+    <% products.forEach(coffee=> { %>
+
+      <article class="catalogue_article_details">
+
+        <div class="catalogue_article_title_image">
+          <h3 id="catalogue_article_title">
+            <%= coffee.name %>
+          </h3>
+          <img src="../images/coffees/<%= coffee.reference %>.webp" alt="Photo du produit" id="article_image">
+        </div>
+
+        <div class="catalogue_origine_category">
+          <p id="catalogue_origine">Origine: <%= coffee.origine %>
+          </p>
+          <p id="catalogue_category">
+            <%= coffee.category %>
+          </p>
+        </div>
+
+        <a href="../produit/<%= coffee.id %>" id="catalogue_article__link">Découvir</a>
+
+      </article>
+      <% }) %>
+
+  </div>
+
+
+
+
+
+  <%- include('partials/footer') %>

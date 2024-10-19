@@ -1,0 +1,210 @@
+/* background pour la page catalogue */
+body {
+  background-color: var(--bgcolor_body);
+}
+
+#catalogue__link {
+  display: none;
+}
+
+/* Styles pour la section de présentation du catalogue */
+.presentation_catalogue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 3rem;
+  width: 100vw;
+  height: 30vh;
+  background-image: url(../images/catalogue4.webp);
+  background-position: center center;
+  background-size: auto;
+  background-repeat: repeat;
+
+  /* Styles pour le titre h1 de presentation_catalogue NOTRE CATALOGUE*/
+  h1 {
+    color: var(--bgcolor_header_footer);
+    padding: 0 1rem;
+    border-radius: 15px;
+    font-size: 3rem;
+    background-color: #daccbf80;
+  }
+}
+
+/* <------------------CHAMP INPUT------------------> */
+
+/* Styles pour le champs input CATEGORIES */
+.form_catalogue {
+  text-align: right;
+}
+
+/* Styles pour les éléments <select> de CATEGORIES */
+select {
+  text-align: center;
+  width: 13rem;
+  margin: 1rem 2rem 0 0;
+  padding: 0.5rem;
+  border: 1px solid #c7b8b2;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: inherit;
+  font-size: 1rem;
+  color: white;
+  background-color: #2c1608;
+}
+
+/* -------------------TOTALITE DES PRODUITS--------------------- */
+
+/* Styles pour l'ensemble des produits du catalogue */
+.catalogue_product {
+  color: var(--color_article_catalogue);
+  padding: 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-evenly;
+  margin-top: 1rem;
+}
+
+/* -------------------CONTENU D'UN ARTICLE--------------------- */
+
+/* Styles pour chaque article*/
+.catalogue_article_details {
+  width: 20vw;
+  height: 50vh;
+  padding: 0rem 1rem;
+  border: 1px solid var(--color_article_catalogue);
+  box-shadow: 0 4px 8px var(--bgcolor_header_footer);
+  background-color: var(--bgcolor_header_footer);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+/* ---------Styles pour le titre de l'article + image*--------*/
+.catalogue_article_title_image {
+  width: 100%; /*100% du parent*/
+  height: 50%;
+  padding-bottom: 30%;
+  position: relative; /* les éléments enfants positionnés absolute se réfèrent à ce conteneur */
+  top: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  flex-direction: column;
+}
+
+/* Styles pour le titre h3 de chaque article */
+#catalogue_article_title {
+  z-index: 10;
+  background-color: #4c36299d;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 0;
+}
+
+/* Styles pour l'image à l'intérieur des détails des articles */
+#article_image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------Styles pour origine + category *--------*/
+.catalogue_origine_category {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1rem 0;
+  font-size: 1.2rem;
+}
+
+/* styles pour origine du café */
+#catalogue_origine {
+  border-top: 1px solid var(--font_color_nav);
+  border-bottom: 1px solid var(--font_color_nav);
+  padding: 0.5rem 0;
+}
+
+/* styles pour category du café */
+#catalogue_category {
+  border-top: 1px solid var(--font_color_nav);
+  border-bottom: 1px solid var(--font_color_nav);
+  padding: 0.5rem 0;
+}
+
+/* Styles pour les liens dans les articles du catalogue DECOUVRIR */
+#catalogue_article__link {
+  font-size: 1.2rem;
+  text-decoration: none;
+  background-color: var(--liens);
+  color: white;
+  border-radius: 10px;
+  padding: 0.2rem 1rem;
+}
+
+/* <------------RESPONSIVE 1024px -----------> */
+@media screen and (max-width: 1024px) {
+  .catalogue_article_details {
+    min-width: 30vw; 
+  }
+
+  .catalogue_article_price_link {
+    flex-direction: column; 
+    align-items: center; 
+  }
+}
+
+/* <------------RESPONSIVE 768px -----------> */
+@media screen and (max-width: 768px) {
+  /* Style des produits dans le catalogue */
+  .catalogue_product {
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    justify-content: space-evenly;
+  }
+  
+  /* Style des champs de formulaire dans le catalogue */
+  .form_catalogue__input {
+    text-align: center; 
+  }
+
+  /* Style de la section de présentation du catalogue */
+  .presentation_catalogue {
+    height: 50vh; 
+    padding: 10vh 0; 
+    background-image: cover; 
+  }
+
+
+  /* Style des détails des articles dans le catalogue */
+  .catalogue_article_details {
+    width: 80vw; 
+  }
+
+  /* Style des images des articles dans le catalogue */
+  .article_image {
+    max-height: 20rem;
+    border-radius: 10%; 
+  }
+
+  /* Style des liens d'article dans le catalogue */
+  .catalogue_article__link {
+    margin-top: 0; 
+  }
+
+  .catalogue_article_price {
+    font-size: 1rem; 
+  }
+
+  .catalogue_article_price_link {
+    flex-direction: column; 
+    align-items: center; 
+  }
+}

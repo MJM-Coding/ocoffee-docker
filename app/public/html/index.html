@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- common styles -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- page style -->
+    <link rel="stylesheet" href="../css/index.css">
+
+    <title>Accueil</title>
+    <meta name="description"content="Découvrez O'Coffee, votre boutique en ligne de cafés d'exception.">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__logo_title">
+            <img src="../images/logo.svg" alt="Logo de la boutique" class="header__logo_title__img">
+            <h1>O'Coffee</h1>
+        </div>
+
+
+        <nav class="nav_menu ">
+            <a href="../html/catalogue.html" class="nav_menu__link">Catalogue</a>
+            <a href="#" class="nav_menu__link">Boutique</a>
+        </nav>
+
+        <button type="button" aria-label="ouvrir_fermer_menu" class="nav_toggler">
+            <span class="line l1"></span>
+            <span class="line l2"></span>
+            <span class="line l3"></span>
+        </button>
+
+    </header>
+    <!-- fin du header -->
+
+
+    <div class="presentation">
+        <div class="presentation_left">
+            <h2>Bienvenue dans l’Univers envoûtant de notre boutique de Café !</h2>
+            <p class="presentation_left_description">
+                Entrez dans un havre de chaleur et de convivialité où chaque moment est une célébration des sens.
+            </p>
+            <p class="presentation_left_description">
+                Découvrez un lieu où chaque tasse de café raconte une histoire. Nous nous engageons à vous offrir des
+                cafés issus de plantations durables, soigneusement sélectionnés pour leur qualité exceptionnelle. Notre
+                boutique se distingue comme un référence incontournable pour tous les amateurs de café, cherchant à
+                explorer des saveurs uniques et authentiques.
+            </p>
+
+            
+            <a href="../catalogue" id="presentation_description__link" 
+            aria-label="Voir le catalogue">Voir le catalogue</a>
+
+        </div>
+
+
+        <div class="presentation_right">
+            <img src="../images/about.webp" alt="">
+        </div>
+    </div>
+
+
+
+    <h2 id="new_product_title">Découvrez nos nouveautés</h2>
+    <div class="news_product">
+        <article class="news_product_details">
+            <h3 id="new_product_subtitle">Guatemalan Antigua</h3>
+            <p>Café corsé avec des nuances chocolatées et une pointe d'épice.</p>
+            <img src="../images/coffees/256505890.webp" alt="" class="article_image">
+            <a href="#" class="news_product_details__link">Découvir</a>
+        </article>
+
+        <article class="news_product_details">
+            <h3 id="new_product_subtitle">Espresso</h3>
+            <p>Café fort et concentré préparé en faisant passer de l'eau chaude à travers du café finement moulu.</p>
+            <img src="../images/coffees/100955890.webp" alt="" class="article_img">
+            <a href="#" class="news_product_details__link">Découvir</a>
+        </article>
+
+        <article class="news_product_details">
+            <h3 id="new_product_subtitle">Sumatra Mandheling</h3>
+            <p>Café profond et terreux avec un corps lourd et une faible acidité.</p>
+            <img src="../images/coffees/302932754.webp" alt="" class="article_img">
+            <a href="#" class="news_product_details__link">Découvir</a>
+        </article>
+
+    </div>
+    <!-- debut footer -->
+
+    <footer class="footer">
+        <div class="footer_title">
+            <img src="../images/logo.svg" alt="Logo de la boutique" class="footer__logo_title__img">
+            <p>O'Coffee</p>
+        </div>
+
+        <div class="adress">
+            <p>123 Rue des Fauvettes 75001 Hauts-de-Cloques</p>
+        </div>
+    </footer>
+
+
+    <script src="../js/menuBurger.js" defer></script>
+
+</body>
+
+</html>

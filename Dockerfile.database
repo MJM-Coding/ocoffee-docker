@@ -1,0 +1,6 @@
+FROM postgres
+
+COPY ./app/data/ocoffee.sql /docker-entrypoint-initdb.d/ocoffee.sql
+
+
+EXPOSE 5432

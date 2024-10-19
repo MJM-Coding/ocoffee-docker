@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+}
+
+#contact__link {
+  display: none; /* Masquer le lien de contact dans la nav */
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #c5aa94;
+  color: #4b3832;
+  margin: 0;
+  padding: 0;
+}
+
+/* CONTAINER TOTAL */
+.container {
+  display: flex; /* aligne les sections côte à côte */
+  justify-content: space-between;
+  padding: 1.3rem;
+  max-width: 70vw;
+  margin: 0 auto; /* Centre le conteneur horizontalement */
+}
+
+/* Style pour la section GAUCHE et DROITE */
+.form_info,
+.form_container {
+  background-color: #daccbf;
+  padding: 1.3rem;
+  border-radius: 8px;
+  box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+/* Styles spécifiques pour la section GAUCHE */
+.form_info {
+  width: 50%;
+}
+
+.form_info h2 {
+  color: #4c3629;
+  margin-bottom: 0.5rem;
+}
+
+/* Styles pour les <p> HORAIRES + NOTRE ADRESSE */
+.form_info p {
+  margin: 0.3rem 0;
+}
+
+/* Style  pour le conteneur pour la mini map**/
+.map-container {
+  margin-top: 1rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Style de la mini map */
+.map-container iframe {
+  width: 100%;
+  height: 28rem;
+  border: none;
+  border-radius: 8px;
+}
+
+/* Style pour le container total SECTION DROITE */
+.form_container {
+  width: 30vw;
+}
+
+.form_container h3 {
+  color: #4c3629;
+  text-align: center;
+  font-size: 2rem;
+  border-top: 1px solid #4c3629;
+  border-bottom: 1px solid #4c3629;
+  margin: 0 7rem 1rem 7rem;
+}
+
+/* Style pour chaque form-group*/
+.form-group {
+  margin-bottom: 1rem;
+}
+
+/* Style pour les labels */
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+/* Style pour les inputs et textareas */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+/* Style pour le textarea 'MESSAGE' */
+textarea {
+  resize: vertical;
+  min-height: 16rem;
+}
+
+/* Style pour le bouton ENVOYER */
+button[type="submit"] {
+  background-color: #537b03;
+  color: #fff;
+  padding: 0.5rem 1.3rem;
+  border: none;
+  border-radius: 4px;
+  float: right;
+}
+
+/* Style pour le bouton ENVOYER au survol */
+button[type="submit"]:hover {
+  background-color: #243502;
+}
+
+/* <------------RESPONSIVE 1024px -----------> */
+@media screen and (max-width: 1024px) {
+  .container {
+    flex-direction: column; 
+  }
+
+  .form_info,
+  .form_container {
+    width: 100%; 
+    margin-bottom: 1.2rem; 
+  }
+}
+
+/*----------------------RESPONSIVE 768px-----------*/
+@media (max-width: 768px) {
+  
+  .form_info,
+  .form_container {
+    margin-bottom: 2rem; 
+  }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bienvenue sur O'Coffee, votre boutique en ligne de cafés d'exception.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+
+  <!-- script de la bibliothèque EmailJS pour la page contact -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+
+  <!-- common styles CSS -->
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/style.css">
+
+
+
+
+  <!-- Feuille CSS différente en fonction de la page -->
+
+  <!-- Vérifie si la variable 'pageName' est définie et si sa valeur est "index" -->
+  <!-- Si 'pageName' est "index", inclut la feuille de style spécifique à la page d'accueil -->
+  <% if (typeof pageName !=="undefined" && pageName==="index" ) { %>
+    <link rel="stylesheet" href="../css/index.css">
+
+    <!-- Vérifie si la variable 'pageName' est définie et si sa valeur est "catalogue" -->
+    <!-- Si 'pageName' est "catalogue", inclut la feuille de style spécifique à la page du catalogue -->
+    <% } else if (typeof pageName !=="undefined" && pageName==="catalogue" ) { %>
+      <link rel="stylesheet" href="../css/catalogue.css">
+
+      <!-- Vérifie si la variable 'pageName' est définie et si sa valeur est "produit" -->
+      <!-- Si 'pageName' est "produit", inclut la feuille de style spécifique à la page du produit -->
+      <% } else if (typeof pageName !=="undefined" && pageName==="produit" ) { %>
+        <link rel="stylesheet" href="../css/produit.css">
+
+
+        <!-- Vérifie si la variable 'pageName' est définie et si sa valeur est "contact" -->
+        <!-- Si 'pageName' est "contact", inclut la feuille de style spécifique à la page ontact -->
+        <% } else if (typeof pageName !=="undefined" && pageName==="contact" ) { %>
+          <link rel="stylesheet" href="../css/contact.css">
+
+
+
+          <!-- Par défaut, inclut une feuille de style commune -->
+          <% } else { %>
+            <link rel="stylesheet" href="../css/style.css">
+            <% } %>
+
+
+
+              <!-- Verifie si la variable 'title' est définie, si definie affiche : title - O'coffee -->
+              <!-- si pas définie seul O'Coffee apparaitra sur l'onglet -->
+              <title>
+                <%= typeof title !=="undefined" ? `${title} - ` : '' %>O'Coffee
+              </title>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__logo_title">
+      <img src="../images/logo.svg" alt="Logo de la boutique" class="header__logo_title__image">
+      <h1>O'Coffee</h1>
+    </div>
+
+    <nav id="menu_navbar">
+      <button id="menu-button" aria-label="Ouvrir le menu">
+        <svg width="100%" height="100%" stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+          xmlns="http://www.w3.org/2000/svg" color="none">
+          <path d="M3 5H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+          <path d="M3 12H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+          <path d="M3 19H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+        </svg>
+      </button>
+
+      <div class="nav_menu">
+        <!-- Bouton de fermeture -->
+        <!-- &times; représente le symbole de la multiplication (×) -->
+        <button id="close-menu" aria-label="Close navigation links">&times;</button>
+        <ul>
+          <li><a href="../" id="accueil-link" class="nav_menu__link">ACCUEIL</a></li>
+          <li><a href="../catalogue" id="catalogue__link" class="nav_menu__link">CATALOGUE</a></li>
+          <li><a href="../contact" id="contact__link" class="contact__link">CONTACT</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>

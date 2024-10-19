@@ -1,0 +1,48 @@
+# La version de la syntaxe Docker Compose (obsolète, peut être supprimée)
+version: '3'
+
+ # !Configuration du service de base de données PostgreSQL
+services:
+  db:
+    image: postgres # Utilise l'image officielle PostgreSQL
+    container_name: ocoffee-db-dev 
+    env_file:
+      - .env 
+    volumes:
+      # Monte le dossier local contenant les scripts d'initialisation
+      - ./app/data/:/docker-entrypoint-initdb.d/
+      # Crée un volume persistant pour les données PostgreSQL
+      - ocoffee-volume-dev:/var/lib/postgresql/data
+    ports:
+      - "5433:5432" # Mappe le port 5433 de l'hôte au port 5432 du conteneur (évite les conflits)
+
+    # ! permet de vérifier régulièrement si la BDD PostgreSQL est prête et fonctionne correctement.
+    healthcheck:
+     # Docker exécute périodiquement la commande spécifiée dans "test".
+     # Si la commande réussit (retourne un code de sortie 0), le conteneur est considéré comme sain.
+      test: ["CMD-SHELL", "pg_isready -U $POSTGRES_USER -d $POSTGRES_DB"]
+      interval: 5s # Fréquence à laquelle le test est exécuté (toutes les 5 secondes)
+      timeout: 5s #  Durée maximale d'exécution du test avant de le considérer comme échoué.
+      retries: 5 # Nombre de tentatives avant de considérer le service comme non sain
+
+  # !Configuration du service de l'application Node.js
+  app:
+    build:
+      context: . # Utilise le répertoire courant comme contexte de build
+      dockerfile: Dockerfile.dev # Utilise Dockerfile.dev pour construire l'image
+    ports:
+      - 3000:3000 # Mappe le port 3000 de l'hôte au port 3000 du conteneur
+    container_name: ocoffee-app-dev 
+    depends_on:
+      db:
+        condition: service_healthy # Attend que la base de données soit prête
+    volumes:
+      - ./:/usr/src/app # Monte le code source dans le conteneur pour le développement
+    env_file:
+      - .env 
+    environment:
+      - DB_HOST=db # Définit l'hôte de la base de données comme le service 'db'
+
+# !Définition des volumes persistants
+volumes:
+  ocoffee-volume-dev: # Volume pour stocker les données PostgreSQL

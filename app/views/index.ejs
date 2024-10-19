@@ -1,0 +1,52 @@
+<%- include('partials/header', { title: 'Accueil' , pageName: 'index' }) %>
+
+
+  <div class="presentation">
+    <div class="presentation_left">
+      <h2 aria-labelledby="titre de bienvenue">Bienvenue dans l’Univers envoûtant de notre boutique de Café !</h2>
+      <p class="presentation_left_description" aria-label="texte de présentation">
+        Entrez dans un havre de chaleur et de convivialité où chaque moment est une célébration des sens.
+      </p>
+      <p class="presentation_left_description" aria-label="texte détaillé de présentation">
+        Découvrez un lieu où chaque tasse de café raconte une histoire. Nous nous engageons à vous offrir des
+        cafés issus de plantations durables, soigneusement sélectionnés pour leur qualité exceptionnelle. Notre
+        boutique se distingue comme un référence incontournable pour tous les amateurs de café, cherchant à
+        explorer des saveurs uniques et authentiques.
+      </p>
+
+      <a href="../catalogue" id="presentation_description__link" aria-label="Voir le catalogue">Voir le catalogue</a>
+    </div>
+
+
+    <div class="presentation_right">
+      <img src="../images/about.webp" alt="Image de présentation">
+    </div>
+  </div>
+
+
+
+  <h2 id="new_product_title" aria-label="Section des nouveautés">Découvrez nos nouveautés</h2>
+  <div class="news_product">
+    
+    <% news.forEach(coffee=> { %>
+      <article class="news_product_details">
+
+        <div class="news_product_image_container">
+          <img src="../images/coffees/<%= coffee.reference %>.webp" alt="Photo du produit" class="article_img">
+        </div>
+
+        <h3 id="new_product_subtitle"><%= coffee.name %></h3>
+        <p><%= coffee.description %></p>
+
+
+        <a href="../produit/<%= coffee.id %>"" class=" news_product_details__link">Découvir</a>
+      </article>
+      <% }) %>
+
+  </div>
+
+
+
+
+
+  <%- include('partials/footer') %>
