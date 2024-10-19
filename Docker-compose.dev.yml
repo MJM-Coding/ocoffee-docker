@@ -9,10 +9,8 @@ services:
     env_file:
       - .env 
     volumes:
-      # Monte le dossier local contenant les scripts d'initialisation
-      - ./app/data/:/docker-entrypoint-initdb.d/
-      # Crée un volume persistant pour les données PostgreSQL
-      - ocoffee-volume-dev:/var/lib/postgresql/data
+      - ./app/data/:/docker-entrypoint-initdb.d/ # Monte le dossier local contenant les scripts d'initialisation
+      - ocoffee-volume-dev:/var/lib/postgresql/data # Crée un volume persistant pour les données PostgreSQL
     ports:
       - "5433:5432" # Mappe le port 5433 de l'hôte au port 5432 du conteneur (évite les conflits)
 
@@ -38,10 +36,18 @@ services:
         condition: service_healthy # Attend que la base de données soit prête
     volumes:
       - ./:/usr/src/app # Monte le code source dans le conteneur pour le développement
+      - /usr/src/app/node_modules  # Ajout d'un volume anonyme pour node_modules
     env_file:
       - .env 
     environment:
       - DB_HOST=db # Définit l'hôte de la base de données comme le service 'db'
+    command: sh -c "if [ ! -d node_modules ]; then npm install; fi && npm run dev"
+     # Exécute la commande dans un shell
+    #  if [ ! -d node_modules ]; then 
+    # Vérifie si le dossier 'node_modules' n'existe pas 
+    # "npm install" Si 'node_modules' n'existe pas, installe les dépendances
+    # fi &&  Si l'installation a réussi, exécute : npm run dev
+  # Lance l'application en exécutant le script 'dev' défini dans package.json
 
 # !Définition des volumes persistants
 volumes:
