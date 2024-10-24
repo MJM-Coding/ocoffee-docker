@@ -4,6 +4,7 @@
   "description": "## Information du projet",
   "main": "index.js",
   "scripts": {
+    "build": "npm install pg",
     "start": "node index.js",
     "dev": "DOTENV_CONFIG_PATH=.env nodemon index.js"
   },
