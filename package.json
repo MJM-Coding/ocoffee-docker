@@ -1,4 +1,13 @@
 {
+  "name": "s09-ocoffee-jessicamoscato",
+  "version": "1.0.0",
+  "description": "## Information du projet",
+  "main": "index.js",
+  "scripts": {
+    "build": "node index.js",
+    "start": "node index.js",
+    "dev": "DOTENV_CONFIG_PATH=.env nodemon index.js"
+  },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "dotenv": "^16.4.5",
@@ -9,14 +18,6 @@
     "prettier": "^3.3.3",
     "sequelize": "^6.37.4"
   },
-  "scripts": {
-    "start": "node index.js",
-    "dev": "DOTENV_CONFIG_PATH=.env nodemon index.js"
-  },
-  "name": "s09-ocoffee-jessicamoscato",
-  "version": "1.0.0",
-  "description": "## Information du projet",
-  "main": "index.js",
   "devDependencies": {
     "nodemon": "^3.1.7"
   },
