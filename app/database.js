@@ -16,7 +16,13 @@ console.log('DATABASE_URL:', process.env.DATABASE_URL);
 const sequelize = usingNeon
   ? new Sequelize(process.env.DATABASE_URL, {
       dialect: "postgres",
-      logging: false, // Désactive les logs SQL par défaut
+      dialectOptions: {
+        ssl: {
+          require: true,
+          rejectUnauthorized: false, // Cela désactive la vérification stricte du certificat, à utiliser avec prudence
+        },
+      },
+      logging: false,
     })
   : new Sequelize(
       process.env.PGDATABASE,
@@ -26,9 +32,10 @@ const sequelize = usingNeon
         host: process.env.DB_HOST,
         port: 5432,
         dialect: "postgres",
-        logging: false, // Désactive les logs SQL par défaut
+        logging: false,
       }
     );
+
 
 // Ajout des logs pour vérifier l'origine de la connexion
 console.log('Using Neon:', usingNeon);
