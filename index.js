@@ -1,33 +1,39 @@
-// Importation des modules nécessaires
-const express = require('express'); // Importation du module Express pour créer le serveur web
-const path = require('path'); // Importation du module 'path' pour gérer les chemins de fichiers
-require('dotenv').config(); // Chargement des variables d'environnement à partir du fichier .env
-const router = require('./app/routes/router'); // Importation du module de routage
+// Importation du module Express pour créer le serveur web
+const express = require ('express');
 
 // Création d'une instance de l'application Express
 const app = express();
 
-// Lier EJS à Express
+// Importation du module 'path' pour gérer les chemins de fichiers
+const path = require('path')
+
+// Chargement des variables d'environnement à partir du fichier .env
+require('dotenv').config();
+
+//importe le module de routage et l'assigne à la constante router pour être utilisé dans la gestion des routes
+const router = require("./app/routes/router")
+
+//lier EJS à Express
 app.set('view engine', 'ejs');
 
-// Définir le répertoire des views
-app.set('views', path.join(__dirname, 'app', 'views')); // __dirname pour obtenir le chemin absolu
+//définir le repertoires des views 
+app.set('views', path.join(__dirname, 'app', 'views'))
 
 // Middleware pour servir les fichiers statiques depuis le dossier public
-app.use(express.static(path.join(__dirname, 'app', 'public'))); // __dirname pour obtenir le chemin absolu
+app.use(express.static(path.join(__dirname, 'app','public')));
+
 
 // Permet d'accéder aux données du formulaire via 'req.body'
 app.use(express.urlencoded({ extended: true }));
 
-// Utiliser le routeur
+
+
 app.use(router);
 
-// Exporter l'application pour Vercel
-module.exports = app;
 
-// Démarrage du serveur si ce fichier est exécuté directement
-if (require.main === module) {
-    app.listen(process.env.PORT || 3001, () => {
-        console.log(`🚀 O'Coffee écoute sur le port: http://localhost:${process.env.PORT || 3001}`);
-    });
-}
+// Démarrage du serveur Express sur le port spécifié par la variable PORT dans le .env
+app.listen(process.env.PORT || 3001, () => {
+    console.log(`🚀 O'Coffee écoute sur le port: http://localhost:${process.env.PORT}`);
+  });
+
+  
