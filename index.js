@@ -1,26 +1,20 @@
-// Importation du module Express pour créer le serveur web
-const express = require('express');
-
-// Importation du module 'path' pour gérer les chemins de fichiers
-const path = require('path');
-
-// Chargement des variables d'environnement à partir du fichier .env
-require('dotenv').config();
+// Importation des modules nécessaires
+const express = require('express'); // Importation du module Express pour créer le serveur web
+const path = require('path'); // Importation du module 'path' pour gérer les chemins de fichiers
+require('dotenv').config(); // Chargement des variables d'environnement à partir du fichier .env
+const router = require('./app/routes/router'); // Importation du module de routage
 
 // Création d'une instance de l'application Express
 const app = express();
-
-// Importation du module de routage
-const router = require("./app/routes/router");
 
 // Lier EJS à Express
 app.set('view engine', 'ejs');
 
 // Définir le répertoire des views
-app.set('views', path.join(__dirname, 'app', 'views'));
+app.set('views', path.join(__dirname, 'app', 'views')); // __dirname pour obtenir le chemin absolu
 
 // Middleware pour servir les fichiers statiques depuis le dossier public
-app.use(express.static(path.join(__dirname, 'app', 'public')));
+app.use(express.static(path.join(__dirname, 'app', 'public'))); // __dirname pour obtenir le chemin absolu
 
 // Permet d'accéder aux données du formulaire via 'req.body'
 app.use(express.urlencoded({ extended: true }));
