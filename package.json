@@ -4,7 +4,6 @@
   "description": "## Information du projet",
   "main": "index.js",
   "scripts": {
-    "build": "node index.js",
     "start": "node index.js",
     "dev": "DOTENV_CONFIG_PATH=.env nodemon index.js"
   },

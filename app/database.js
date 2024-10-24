@@ -5,6 +5,14 @@ const { Sequelize } = require("sequelize");
 
 // Vérification de l'origine de la connexion
 const usingNeon = !!process.env.DATABASE_URL;
+
+// Log des variables d'environnement
+console.log('PGDATABASE:', process.env.PGDATABASE);
+console.log('PGUSER:', process.env.PGUSER);
+console.log('PGPASSWORD:', process.env.PGPASSWORD);
+console.log('DB_HOST:', process.env.DB_HOST);
+console.log('DATABASE_URL:', process.env.DATABASE_URL);
+
 const sequelize = usingNeon
   ? new Sequelize(process.env.DATABASE_URL, {
       dialect: "postgres",
@@ -21,6 +29,10 @@ const sequelize = usingNeon
         logging: false, // Désactive les logs SQL par défaut
       }
     );
+
+// Ajout des logs pour vérifier l'origine de la connexion
+console.log('Using Neon:', usingNeon);
+console.log('Database URL:', process.env.DATABASE_URL);
 
 sequelize
   .authenticate()
