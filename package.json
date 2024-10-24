@@ -3,13 +3,14 @@
     "@emailjs/browser": "^4.4.1",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
-    "express": "^4.19.2",
+    "express": "^4.21.1",
     "pg": "^8.13.0",
     "pg-hstore": "^2.3.4",
     "prettier": "^3.3.3",
     "sequelize": "^6.37.4"
   },
   "scripts": {
+    "start": "node index.js",
     "dev": "DOTENV_CONFIG_PATH=.env nodemon index.js"
   },
   "name": "s09-ocoffee-jessicamoscato",

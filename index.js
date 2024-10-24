@@ -33,7 +33,7 @@ app.use(router);
 
 // Démarrage du serveur Express sur le port spécifié par la variable PORT dans le .env
 app.listen(process.env.PORT, () => {
-    console.log(`O'Coffee écoute sur le port: ${process.env.PORT}`);
+    console.log(`🚀 O'Coffee écoute sur le port: http://localhost:${process.env.PORT}`);
   });
 
   

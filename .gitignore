@@ -3,3 +3,4 @@
 .env.dev
 .env.docker-compose
 node_modules/
+.vercel
