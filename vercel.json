@@ -1,16 +1,11 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "index.js",
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "index.js"
-      }
-    ]
+  "build": {
+    "env": {
+      "DATABASE_URL": "postgresql://neondb_owner:z5Z1cBHNoDaU@ep-fancy-silence-a8ustolh.eastus2.azure.neon.tech/neondb?sslmode=require",
+      "PGDATABASE": "neondb",
+      "PGUSER": "neondb_owner",
+      "PGPASSWORD": "z5Z1cBHNoDaU",
+      "DB_HOST": "ep-fancy-silence-a8ustolh.eastus2.azure.neon.tech"
+    }
   }
-  
+}
