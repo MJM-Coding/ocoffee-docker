@@ -140,3 +140,19 @@ button[type="submit"]:hover {
     margin-bottom: 2rem; 
   }
 }
+
+.container {
+  max-width: 100vw;
+
+h3 { 
+  font-size: 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0.5rem 0;
+
+}
+}

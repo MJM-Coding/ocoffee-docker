@@ -161,7 +161,7 @@ body {
   /* recentre le produit sur petit ecran */
   .oneProduct {
     margin: 3rem;
-    width: 70vw;
+    width: 90vw;
     height: auto;
   }
   /* ameliore la photo d'illustration sur petit ecran */
