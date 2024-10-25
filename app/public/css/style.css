@@ -41,7 +41,6 @@ body {
   height: 15vh;
   display: flex;
   align-items: center;
-  text-decoration: none ;
   color: inherit; 
 }
 
@@ -52,8 +51,14 @@ body {
 .header__logo_title h1 {
   color: var(--font_color_nav);
   padding-left: 1rem;
-  text-decoration: none !important;
-  
+}
+
+.header a, .header a:hover, .header a:focus, .header a:active {
+  text-decoration: none;
+}
+
+.header a h1, .header a:hover h1, .header a:focus h1, .header a:active h1 {
+  text-decoration: none;
 }
 
 /* Styles pour l'image du logo dans header */

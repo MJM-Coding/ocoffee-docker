@@ -17,7 +17,8 @@ body {
 /* CONTAINER TOTAL */
 .container {
   display: flex; /* aligne les sections côte à côte */
-  justify-content: space-between;
+  justify-content: center;
+  gap: 2rem ;
   padding: 1.3rem;
   max-width: 70vw;
   margin: 0 auto; /* Centre le conteneur horizontalement */
