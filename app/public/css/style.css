@@ -35,13 +35,18 @@ body {
   align-items: center;
 }
 
+
+.header a {
+  text-decoration: none !important;
+  color: inherit !important;
+}
 /* Styles pour la section du logo et du titre O'COFFE dans header */
 .header__logo_title {
   width: 20vw;
   height: 15vh;
   display: flex;
   align-items: center;
-  color: inherit; 
+ 
 }
 
 .header__logo_title:hover {
@@ -53,13 +58,6 @@ body {
   padding-left: 1rem;
 }
 
-.header a, .header a:hover, .header a:focus, .header a:active {
-  text-decoration: none;
-}
-
-.header a h1, .header a:hover h1, .header a:focus h1, .header a:active h1 {
-  text-decoration: none;
-}
 
 /* Styles pour l'image du logo dans header */
 .header__logo_title__image {
