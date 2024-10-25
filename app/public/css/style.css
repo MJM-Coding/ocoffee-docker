@@ -41,14 +41,18 @@ body {
   height: 15vh;
   display: flex;
   align-items: center;
-  text-decoration: none;
+  text-decoration: none !important;
+  color: inherit; 
 }
 
+.header__logo_title:hover {
+  text-decoration: none; 
+}
 /* titre O'coffe */
 .header__logo_title h1 {
   color: var(--font_color_nav);
   padding-left: 1rem;
-  text-decoration: none;
+  
 }
 
 /* Styles pour l'image du logo dans header */
