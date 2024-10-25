@@ -48,6 +48,7 @@ body {
 .header__logo_title h1 {
   color: var(--font_color_nav);
   padding-left: 1rem;
+  text-decoration: none;
 }
 
 /* Styles pour l'image du logo dans header */
